@@ -1,0 +1,23 @@
+// Modular scale
+$ms-ratio: 1.5;
+$ms-base: remify(18);
+$ms-base-min: remify(14);
+
+// Body typography
+$body-font-stack: "Merriweather", serif;
+$body-font-weight: 300;
+
+$code-font-stack: monospace;
+$code-font-weight: 300;
+$code-font-size: ms(0);
+
+// Heading typography
+$heading-font-stack: "Simonetta", serif;
+$heading-font-weight: 400;
+$heading-text-align: center;
+$h1-size: ms(3);
+$h2-size: ms(2);
+$h3-size: ms(1);
+
+// Misc.
+$content-max-width: remify(768);

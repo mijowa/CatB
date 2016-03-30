@@ -1,0 +1,51 @@
+---
+layout: default
+---
+
+<section id="About" class="section">
+	{% capture about %}{% include about.md %}{% endcapture %}
+	{{ about | markdownify }}
+    <figure>
+        <img src={{ "/images/illustration.jpg" | prepend: site.baseurl }}
+             alt="Illustration of cathedral and marketplace">
+    </figure>
+</section>
+
+<section id="TOC" class="section">
+
+	<h2>Table of Contents:</h2>
+
+	<ol start="0">
+
+        {% assign aphorismIndex = 0 %}
+
+		{% for chapter in site.chapters %}
+		<li>
+			<a href="#{{ chapter.title | replace: ' ', '_' }}">{{ chapter.title }}</a>
+
+            {% if chapter.aphorisms %}
+			<ul>
+
+				{% for aphorism in chapter.aphorisms %}
+				<li>
+                    {% assign aphorismIndex = aphorismIndex | plus: 1 %}
+					<i><a href="#aphorism-{{ aphorismIndex }}">{{ chapter.aphorisms[forloop.index0] }}</a></i>
+				</li>
+				{% endfor %}
+
+			</ul>
+            {% endif %}
+
+		</li>
+		{% endfor %}
+
+	</ol>
+
+</section>
+
+{% for chapter in site.chapters %}
+<article id="{{ chapter.title | replace: ' ', '_' }}" class="chapter">
+	<h2>{{ chapter.title }}</h2>
+    {{ chapter.content }}
+</article>
+{% endfor %}

@@ -1,0 +1,9 @@
+@function remify($px-equivalent) {
+    @return $px-equivalent * 0.0625rem;
+}
+
+@function rem-to-vw($size-in-rems) {
+    $a: ms-unitless($size-in-rems);
+    $b: ms-unitless($content-max-width);
+    @return ($a / $b) * 100vw;
+}

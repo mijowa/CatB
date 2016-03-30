@@ -1,0 +1,90 @@
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family:             $body-font-stack;
+    font-weight:             $body-font-weight;
+    font-size:               $ms-base;
+    line-height:             $ms-ratio;
+}
+
+h1,
+h2,
+h3 {
+    font-family:             $heading-font-stack;
+    font-weight:             $heading-font-weight;
+    text-align:              $heading-text-align;
+}
+
+// Max-width
+h1 {
+    font-size:               $h1-size;
+    margin-bottom:           $h1-size;
+}
+
+h2 {
+    font-size:               $h2-size;
+    margin-bottom:           $h2-size;
+}
+
+h3 {
+    font-size:               $h3-size;
+    margin-bottom:           $h3-size;
+}
+
+code {
+    font-family:             $code-font-stack;
+    font-size:               $code-font-size;
+    font-weight:             $code-font-weight;
+}
+
+// Transitional-width
+@media only screen and (max-width: $content-max-width) {
+
+    body {
+        font-size: rem-to-vw($ms-base);
+    }
+
+    h1 {
+        font-size: rem-to-vw($h1-size);
+    }
+
+    h2 {
+        font-size: rem-to-vw($h2-size);
+    }
+
+    h3 {
+        font-size: rem-to-vw($h3-size);
+    }
+
+    code {
+        font-size: rem-to-vw($code-font-size);
+    }
+}
+
+// Min-width
+$factor: $ms-base-min / $ms-base;
+@media only screen and (max-width: $content-max-width * $factor) {
+
+    body {
+        font-size: $ms-base-min;
+    }
+
+    h1 {
+        font-size: $h1-size * $factor;
+    }
+
+    h2 {
+        font-size: $h2-size * $factor;
+    }
+
+    h3 {
+        font-size: $h3-size * $factor;
+    }
+
+    code {
+        font-size: $code-font-size * $factor;
+    }
+}

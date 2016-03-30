@@ -1,0 +1,65 @@
+%paragraph-margins {
+    margin: 0 0 ms(1) 0;
+}
+
+p {
+    @extend %paragraph-margins;
+
+    li > & {
+        text-indent: 0;
+    }
+}
+
+blockquote {
+    @extend %paragraph-margins;
+    padding: ms(1);
+}
+
+hr {
+    margin: 0 ms(3) ms(1);
+}
+
+ul,
+ol {
+    padding-left: ms(1);
+    list-style: square outside;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+li {
+    margin: ms(-1) 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+.header {
+    padding-top: ms(3);
+}
+
+.container {
+    max-width: #{$content-max-width};
+    margin: 0 auto;
+    padding: 0 ms(-2);
+}
+
+.chapter,
+.section {
+    padding: ms(2) 0;
+
+    &:first-child {
+        padding-top: 0;
+    }
+}
+
+.note {
+    margin-bottom: ms(4);
+
+    &__heading {
+        @extend %paragraph-margins;
+    }
+}

@@ -1,0 +1,58 @@
+//                 hue  sat.  lum.
+$blue:        hsl( 210, 100%, 20% );
+$light-blue:  hsl( 210, 100%, 30% );
+$orange:      hsl(  30,  85%, 30% );
+$gray:        hsl(   0,   0%, 50% );
+$light-gray:  hsl(   0,   0%, 93% );
+
+i,
+em,
+cite {
+    font-style: italic;
+
+    & > & {
+        font-style: normal;
+    }
+}
+
+a {
+    color: $blue;
+
+    &:hover,
+    &:focus {
+        color: $light-blue;
+        text-decoration: none;
+    }
+}
+
+blockquote {
+    font-style: italic;
+    border-left: ms(-2) solid $gray;
+    background: $light-gray;
+}
+
+.aphorism {
+    background: $light-gray;
+    border-color: $orange;
+}
+
+hr,
+.chapter,
+.section {
+    border-bottom: 1px solid $gray;
+}
+
+.note {
+
+    &__ref {
+        vertical-align: top;
+        font-size: ms(-1);
+        text-decoration: none;
+        font-weight: 700;
+    }
+
+    &__heading > a {
+        text-decoration: none;
+        border-bottom: 1px solid $blue;
+    }
+}
