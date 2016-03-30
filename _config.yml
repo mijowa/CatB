@@ -15,4 +15,3 @@ url: "https://mijowa.github.io" # the base hostname & protocol for your site
 markdown: kramdown
 collections:
 - chapters
-source: ./src
