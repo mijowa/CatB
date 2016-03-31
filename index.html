@@ -11,6 +11,11 @@ layout: default
     </figure>
 </section>
 
+<section class="section">
+    {% capture ESR-copyright %}{% include ESR-copyright.md %}{% endcapture %}
+	{{ ESR-copyright | markdownify }}
+</section>
+
 <section id="TOC" class="section">
 
 	<h2>Table of Contents:</h2>
