@@ -1,5 +1,5 @@
 // Modular scale
-$ms-ratio: 1.5;
+$ms-ratio: 1.414;
 $ms-base: remify(18);
 $ms-base-min: remify(14);
 
@@ -20,4 +20,4 @@ $h2-size: ms(2);
 $h3-size: ms(1);
 
 // Misc.
-$content-max-width: remify(768);
+$content-max-width: remify(800);
