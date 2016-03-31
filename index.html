@@ -3,17 +3,11 @@ layout: default
 ---
 
 <section id="About" class="section">
-	{% capture about %}{% include about.md %}{% endcapture %}
-	{{ about | markdownify }}
-    <figure>
-        <img src={{ "/images/illustration.jpg" | prepend: site.baseurl }}
-             alt="Illustration of cathedral and marketplace">
-    </figure>
+    {% include about.html %}
 </section>
 
-<section class="section">
-    {% capture ESR-copyright %}{% include ESR-copyright.md %}{% endcapture %}
-	{{ ESR-copyright | markdownify }}
+<section id="copyright" class="section">
+    {% include ESR-copyright.html %}
 </section>
 
 <section id="TOC" class="section">
