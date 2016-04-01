@@ -49,10 +49,16 @@ img {
 
 .chapter,
 .section {
-    padding: ms(4) 0;
+    @include media-screen {
+        padding: ms(4) 0;
 
-    &:first-child {
-        padding-top: 0;
+        &:first-child {
+            padding-top: 0;
+        }
+    }
+
+    @include media-print {
+        page-break-after: always;
     }
 }
 
@@ -61,5 +67,11 @@ img {
 
     &__heading {
         @extend %paragraph-margins;
+    }
+}
+
+@media not print {
+    #js-link-reference {
+        display: none;
     }
 }

@@ -1,0 +1,11 @@
+@mixin media-screen {
+    @media screen {
+        @content;
+    }
+}
+
+@mixin media-print {
+    @media print {
+        @content;
+    }
+}

@@ -23,23 +23,52 @@ a {
         color: $light-blue;
         text-decoration: none;
     }
+
+    @include media-print {
+        color: #000;
+
+        // make internal links look like plain text.
+        &[href^="#"] {
+            text-decoration: none;
+        }
+
+        &[data-link-number]::after {
+            content: " [" attr(data-link-number) "]";
+            font-style: normal;
+            vertical-align: top;
+            font-size: ms(-1);
+            text-decoration: none;
+            font-weight: 700;
+        }
+    }
 }
 
 blockquote {
     font-style: italic;
     border-left: ms(-2) solid $gray;
     background: $light-gray;
+
+    @include media-print {
+        border-left: 3px solid $gray;
+    }
 }
 
 .aphorism {
     background: $light-gray;
     border-color: $orange;
+
+    @include media-print {
+        border-color: #000;
+    }
 }
 
-hr,
+// hr,
 .chapter,
 .section {
-    border-bottom: 1px solid $gray;
+
+    @include media-screen {
+        border-bottom: 1px solid $gray;
+    }
 }
 
 .note {
@@ -54,5 +83,9 @@ hr,
     &__heading > a {
         text-decoration: none;
         border-bottom: 1px solid $blue;
+
+        @include media-print {
+            border: none;
+        }
     }
 }

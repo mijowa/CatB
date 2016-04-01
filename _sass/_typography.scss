@@ -1,6 +1,10 @@
 html {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+
+    @include media-print {
+        font-size: 75%;
+    }
 }
 
 body {
