@@ -1,4 +1,9 @@
 ---
 ---
 
-{% include js/link-reference.js %}
+$( document ).ready( function() {
+
+    {% include js/linkReference.js %}
+    {% include js/smarterPageBreak.js %}
+
+});

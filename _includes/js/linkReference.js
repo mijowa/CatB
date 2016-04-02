@@ -30,26 +30,22 @@
     }
 */
 
-$( document ).ready( function() {
+(function() {
+    var count = 1;
 
-    (function() {
-        var count = 1;
+    // Don't target internal links.
+    $( 'a:not([href^="#"])' ).each( function() {
+        var text = $( this ).text();
+        var href = $( this ).attr( 'href' );
 
-        // Don't target internal links.
-        $( 'a:not([href^="#"])' ).each( function() {
-            var text = $( this ).text();
-            var href = $( this ).attr( 'href' );
+        // Don't add to references if the url is already spelled out.
+        if ( text !== href ) {
 
-            // Don't add to references if the url is already spelled out.
-            if ( text !== href ) {
+            // Give the anchor a data attribute to be used by CSS.
+            $( this ).attr( 'data-link-number', count );
+            count = count + 1;
 
-                // Give the anchor a data attribute to be used by CSS.
-                $( this ).attr( 'data-link-number', count );
-                count = count + 1;
-
-                $( '#js-link-reference__list' ).append( '<li>' + href + '</li>' );
-            }
-        });
-    }());
-
-});
+            $( '#js-link-reference__list' ).append( '<li>' + href + '</li>' );
+        }
+    });
+}());
